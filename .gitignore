@@ -4,3 +4,7 @@
 __pycache__
 *.db
 *.pytest_cache
+CONTRIBUTING.md
+halfway-there.gif
+LICENSE.md
+.gitignore
