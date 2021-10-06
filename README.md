@@ -1,15 +1,13 @@
 ![image1](./images/king_county_line.jpg)
-# Project 2 Name
+# Develop an Inferential Model for Understanding the Variance in Home Prices of King County Washington, USA
 
 **Authors**: Evan Johnson, Isaac Barrera, Seung Lee
 
-## Project 2 BLUF Statement
-
-Task: Redfin / Zillow are moving into King County. They anticipate home prices in this area to rise in the upcoming future, but do not have an accurate model to estimate current house prices. 
+Task: Our stakeholder is a house flipping company based in King County. They anticipate home prices in this area to rise in the upcoming future, but do not have an accurate model to estimate current house prices. 
 
 ## Business Problem
 
-Our company wants to beat the competition to the market but also is weary of overpaying for homes. To pick the best investments, we are here to create home price models of the King County area. By using metrics such as square feet, condition, and features (view, waterfront) we will create a model that will reflect future home prices in the area.
+Our company wants to beat the competition to the market but also is weary of overpaying for homes. To pick the best investments, we are here to create home price models of the King County area. By using metrics such as square feet, condition, and features (view, waterfront) we created a model that could account for the variabilities in home price.
 
 Job: Clean the data on recent house sells in King County and find out what metrics / features are most important in gauging house price. Then, create a linear regression model that will account for variability in home price using input variables.
 
@@ -17,18 +15,20 @@ Job: Clean the data on recent house sells in King County and find out what metri
 
 ## Data and Methods
 
-We obtained the data from Kings County.
+We obtained the data from Kings County. Contained in the data are home sales in King County up to 2015.
 
 Within the obtained data, there were numerous columns that contained categorical variables that will cause problems when fitting a linear regression line. To make the dataset continuous, we had to change the columns 'waterfront', 'condition', and 'view'.
 There were a couple of columns with missing values and we chose to fill them with 'NO' or '0' and safely assume that house doesnt have the unlisted feature. 
 
-Lastly, in order to reduce the impact of outliers in our data, we deleted features that are 3 standard deviations from the mean. This left us with a final dataset of N = 20,028.
+Because of the nature of the business of home flipping, it is ideal to target 'cookie cutter' houses to easily determine the price of a home when fixed up to its neighbor's condition.
+
+In order to reduce the impact of outliers in our data, we deleted features that are 3 standard deviations from the mean. This left us with a final dataset of N = 20,028.
 
 Our cleaned data is uploaded to a new csv, 'cleaned_data.csv' within our data folder.
 
 With the cleaned dataset, we used Python libraries 'sklearn' to create a train/test split and scale and transform. Then we used linear regression and RFE to select the most impactful features to pass into OLS.
 
-With 'statsmodels' we created our model summary that output the adjusted rsquared, along with the coefficients of our features.
+With Python library 'statsmodels', we created our model summary that output the adjusted rsquared, along with the coefficients of our features.
 
 To validate our model, we tested for the assumptions of linear regression.
 - Check Normal Distributions of Input Variables
@@ -46,6 +46,8 @@ To build an accurate model that could be explained, we chose the variables; 'sqf
 Our first model could account for just a little over 50% of home price with our chosen variables. Because there are still another 50% we did not factor into our model, we decided to engineer more features to include.
 (Adjusted R-Squared ~ 0.505)
 
+![model1](./images/simple_model.png)
+
 ### Model 2 - Advanced Model
 
 In our Advanced Model, the feature we engineered was population / city density. By grouping 'urban', 'suburban', and 'rural' areas into their respective categories, we figured our model would be more accurate. 
@@ -61,6 +63,10 @@ The 'urban' area is well defined in grey (Seattle). On the outskirts of Seattle,
 With these features, our model increased its Adjusted R-squared by around 10%. This proves that our model with engineered features is increasing our model's accuracy. 
 
 ![price](./images/prices.png)
+
+Because there is a difference in price in relation to city density, creating variables to account for density improved our model performance.
+
+![model2](./images/advance_model.png)
 
 ## Conclusions
 
@@ -84,12 +90,11 @@ You are in the README.md. The 'Simple_Model.ipynb' and 'Advanced_Model.ipynb' co
 Our 'Presentation.pdf' contains our google slides presentation that sums up important information for our audience. In 'data' you will be able to see the dataset we worked with. Likewise, 'Images' will contain images used in this 'README.md' generated from code and as well as from the web.
 
 ```
-├── README.md                           <- The top-level README for reviewers of this project
-├── Simple_Model.ipynb                  <- Narrative documentation of analysis in creating the Simple_Model
-├── Advanced_model.ipynb                <- Narrative documentation of analysis in creating the Advanced_Model
-├── Data_Exploration.ipynb              <- Process of data cleaning + separating clean from uncleaned data
-├── images                              <- Holds images used in this README.md  
-├── data                                <- Both sourced externally and generated from code
-└── Presentation.pdf                    <- PDF version of project presentation
+├── README.md                              <- The top-level README for reviewers of this project
+├── appendix.ipynb                         <- Narrative documentation of analysis in creating the Models
+├── data                                   <- Both sourced externally and generated from code
+├── images                                 <- Holds images used in this README.md  
+├── HomeFlip_kingCounty_Price_Model.ipynb  <- Narrative documentation of analysis explaining the Models 
+└── Presentation.pdf                       <- PDF version of project presentation
 ```
 
