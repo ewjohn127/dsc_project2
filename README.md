@@ -1,3 +1,4 @@
+![image1](./pictures/king_county_line.jpg)
 # Project 2 Name
 
 **Authors**: Evan Johnson, Isaac Barrera, Seung Lee
@@ -11,6 +12,8 @@ Task: Redfin / Zillow are moving into King County. They anticipate home prices i
 Our company wants to beat the competition to the market but also is weary of overpaying for homes. To pick the best investments, we are here to create home price models of the King County area. By using metrics such as square feet, condition, and features (view, waterfront) we will create a model that will reflect future home prices in the area.
 
 Job: Clean the data on recent house sells in King County and find out what metrics / features are most important in gauging house price. Then, create a linear regression model that will account for variability in home price using input variables.
+
+![image2](./pictures/house_remodel.png)
 
 ## Data and Methods
 
@@ -56,6 +59,8 @@ The 'urban' area is well defined in grey (Seattle). On the outskirts of Seattle,
 ![graph2](./pictures/King_County_Map.png)
 
 With these features, our model increased its Adjusted R-squared by around 10%. This proves that our model with engineered features is increasing our model's accuracy. 
+
+![price](./pictures/prices.png)
 
 ## Conclusions
 
