@@ -1,4 +1,4 @@
-![image1](./pictures/king_county_line.jpg)
+![image1](./images/king_county_line.jpg)
 # Project 2 Name
 
 **Authors**: Evan Johnson, Isaac Barrera, Seung Lee
@@ -13,7 +13,7 @@ Our company wants to beat the competition to the market but also is weary of ove
 
 Job: Clean the data on recent house sells in King County and find out what metrics / features are most important in gauging house price. Then, create a linear regression model that will account for variability in home price using input variables.
 
-![image2](./pictures/house_remodel.png)
+![image2](./images/house_remodel.png)
 
 ## Data and Methods
 
@@ -52,15 +52,15 @@ In our Advanced Model, the feature we engineered was population / city density. 
 
 To do this, we looked at a zipcode map of King's County
 
-![graph1](./pictures/King_County_Washington.png)
+![graph1](./images/King_County_Washington.png)
 
 The 'urban' area is well defined in grey (Seattle). On the outskirts of Seattle, the map shows 'incorporated' areas in color, representing 'suburbs'. Areas that dominated by lack of color were thrown into the 'rural' bin. After doing so, our map of King County looks like this:
 
-![graph2](./pictures/King_County_Map.png)
+![graph2](./images/King_County_Map.png)
 
 With these features, our model increased its Adjusted R-squared by around 10%. This proves that our model with engineered features is increasing our model's accuracy. 
 
-![price](./pictures/prices.png)
+![price](./images/prices.png)
 
 ## Conclusions
 
