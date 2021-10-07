@@ -7,15 +7,17 @@ Task: Our stakeholder is a house flipping company based in King County. They ant
 
 ## Business Problem
 
+Job: Clean the data on recent house sales in King County and find out what metrics / features are most important in gauging house price. Then, create a linear regression model that will account for variability in home price using input variables.
+
 Our company wants to beat the competition to the market but also is weary of overpaying for homes. To pick the best investments, we are here to create home price models of the King County area. By using metrics such as square feet, condition, and features (view, waterfront) we created a model that could account for the variabilities in home price.
 
-Job: Clean the data on recent house sells in King County and find out what metrics / features are most important in gauging house price. Then, create a linear regression model that will account for variability in home price using input variables.
+Our final model determined that livable space, construction quality, and location were the most important factors in home pricing in King County.
 
 ![image2](./images/house_remodel.png)
 
 ## Data and Methods
 
-We obtained the data from King County. Contained in the data are home sales in King County up until 2015.
+We obtained the data from King County. Contained in the data are home sales in King County years 2014 and 2015.
 
 Within the obtained data, there were numerous columns that contained categorical variables that will cause problems when fitting a linear regression line. To make the dataset continuous, we had to change the columns 'waterfront', 'condition', and 'view'.
 
@@ -109,11 +111,14 @@ When checking for collinearity, we do find that 'grade' and 'sqft_living' are hi
 
 Based on our data, it is clear that the location of the home has a large factor of its price. By binning the zipcodes into three categories, 'urban', 'suburban', and 'rural', we were able to create a more accurate model. 
 
+Moving away from Seattle decreases the value of the home, on average.
+The two most important factors in your homes price are livable space, and construction grade.
+
 ### Limitations
 
 When checking for the assumptions of linearity, we did come across some problems. However, our model does perform better than the base, but the results show that our model can still be improved.
 
-Our data was limited to years 2014-2015. Preferreably, we would want as more data to create a better model.
+Our data was limited to years 2014-2015. Preferably, we would want more data to create a better model.
 
 ## Future Investigations
 
