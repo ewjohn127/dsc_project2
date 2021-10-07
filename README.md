@@ -15,14 +15,19 @@ Job: Clean the data on recent house sells in King County and find out what metri
 
 ## Data and Methods
 
-We obtained the data from Kings County. Contained in the data are home sales in King County up to 2015.
+We obtained the data from King County. Contained in the data are home sales in King County up until 2015.
 
 Within the obtained data, there were numerous columns that contained categorical variables that will cause problems when fitting a linear regression line. To make the dataset continuous, we had to change the columns 'waterfront', 'condition', and 'view'.
+
 There were a couple of columns with missing values and we chose to fill them with 'NO' or '0' and safely assume that house doesnt have the unlisted feature. 
 
 Because of the nature of the business of home flipping, it is ideal to target 'cookie cutter' houses to easily determine the price of a home when fixed up to its neighbor's condition.
 
-In order to reduce the impact of outliers in our data, we deleted features that are 3 standard deviations from the mean. This left us with a final dataset of N = 20,028.
+![cookies](./images/cookies.jpg)
+
+In order to reduce the impact of outliers in our data, we deleted features that are 3 standard deviations from the mean. 
+
+Finally, we dropped any duplicate entries. This left us with a final dataset of N = 20,361.
 
 Our cleaned data is uploaded to a new csv, 'cleaned_data.csv' within our data folder.
 
@@ -45,9 +50,11 @@ To build an accurate model that could be explained, we chose the variables; 'sqf
 
 Our first model could account for just a little over 50% of home price with our chosen variables. Because there are still another 50% we did not factor into our model, we decided to engineer more features to include.
 (Adjusted R-Squared ~ 0.505)
-
+### Trained Set
 ![model1](./images/simple_model.png)
 
+### Test Set
+![model1test](./images/simple_model_test.png)
 ### Model 2 - Advanced Model
 
 In our Advanced Model, the feature we engineered was population / city density. By grouping 'urban', 'suburban', and 'rural' areas into their respective categories, we figured our model would be more accurate. 
@@ -62,15 +69,51 @@ The 'urban' area is well defined in grey (Seattle). On the outskirts of Seattle,
 
 With these features, our model increased its Adjusted R-squared by around 10%. This proves that our model with engineered features is increasing our model's accuracy. 
 
-![price](./images/prices.png)
+![price](./images/home_prices.png)
 
 Because there is a difference in price in relation to city density, creating variables to account for density improved our model performance.
 
+### Training Set
 ![model2](./images/advance_model.png)
+
+### Test Set
+![model2test](./images/advance_model_test.png)
+
+## Model Validation
+
+### Normal Distribution of Input Variables
+
+![valid1](./images/normalilty_check.png)
+
+Our input variables have a relatively normal distribution. The input variables that have multiple peaks are due to it being categorical and thus cannot be in-between two values.
+
+### Checking Distribution of Residuals
+
+![valid2](./images/residual_check.png)
+
+Our model does not encapture all the factors that affect price, however our model does accurately capture a large portion of the data.
+
+### Checking for Heteroskedasticity
+
+![valid3](./images/hetero_check.png)
+
+Ideally, we would want to see a random scatter plot with no trend. Although the points do seem random, there does seem to be some sort of trend as the points resemble a trapizoid shape with a concentration of points in left side of our plot.
+
+### Checking for Multicollinearity
+
+![valid4](./images/multi_check.png)
+
+When checking for collinearity, we do find that 'grade' and 'sqft_living' are highly correlated ( > .7). This does raise a flag, however grade of the house and sqft_living should be independent features of the house so we feel confident in leaving it in our model.
 
 ## Conclusions
 
 Based on our data, it is clear that the location of the home has a large factor of its price. By binning the zipcodes into three categories, 'urban', 'suburban', and 'rural', we were able to create a more accurate model. 
+
+### Limitations
+
+When checking for the assumptions of linearity, we did come across some problems. However, our model does perform better than the base, but the results show that our model can still be improved.
+
+Our data was limited to years 2014-2015. Preferreably, we would want as more data to create a better model.
 
 ## Future Investigations
 
@@ -78,7 +121,7 @@ In the future, by further binning zipcodes using metrics such as geographical in
 
 ## For More Information
 
-Please review our full analysis in [our Jupyter Notebook](./Index.ipynb) or our [presentation](./Slides.pdf).
+Please review our full analysis in [our Jupyter Notebook](./HomeFlip_KingCounty_Price_Model.ipynb.ipynb) or our [presentation](./Presentation.pdf).
 
 For any additional questions, please contact **Evan Johnson | ewjohn127@gmail.com, Isaac Barrera | ibarr24@gmail.com, Seung Lee | baekho5767@gmail.com**
 
@@ -91,10 +134,10 @@ Our 'Presentation.pdf' contains our google slides presentation that sums up impo
 
 ```
 ├── README.md                              <- The top-level README for reviewers of this project
-├── appendix.ipynb                         <- Narrative documentation of analysis in creating the Models
+├── appendix.ipynb                         <- Narrative documentation of analysis in creating the Models in jupyter notebook
 ├── data                                   <- Both sourced externally and generated from code
 ├── images                                 <- Holds images used in this README.md  
-├── HomeFlip_kingCounty_Price_Model.ipynb  <- Narrative documentation of analysis explaining the Models 
+├── HomeFlip_kingCounty_Price_Model.ipynb  <- Narrative documentation of analysis explaining the Models in jupyter notebook
 └── Presentation.pdf                       <- PDF version of project presentation
 ```
 
