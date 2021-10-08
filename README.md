@@ -9,7 +9,7 @@ Task: Our stakeholder is a house flipping company based in King County. They ant
 
 Job: Clean the data on recent house sales in King County and find out what metrics / features are most important in gauging house price. Then, create a linear regression model that will account for variability in home price using input variables.
 
-Our company wants to beat the competition to the market but also is weary of overpaying for homes. To pick the best investments, we are here to create home price models of the King County area. By using metrics such as square feet, condition, and features (view, waterfront) we created a model that could account for the variabilities in home price.
+Our company wants to beat the competition to the market but also is weary of overpaying for homes. To pick the best investments, we are here to create home price models of the King County area. By using metrics such as square feet, condition, and features (that we will create) we created a model that could account for the variabilities in home price.
 
 Our final model determined that livable space, construction quality, and location were the most important factors in home pricing in King County.
 
@@ -17,23 +17,27 @@ Our final model determined that livable space, construction quality, and locatio
 
 ## Data and Methods
 
-We obtained the data from King County. Contained in the data are home sales in King County years 2014 and 2015.
+Our dataset contained records of home sales in King County from years 2014 and 2015.
 
 Within the obtained data, there were numerous columns that contained categorical variables that will cause problems when fitting a linear regression line. To make the dataset continuous, we had to change the columns 'waterfront', 'condition', and 'view'.
 
-There were a couple of columns with missing values and we chose to fill them with 'NO' or '0' and safely assume that house doesnt have the unlisted feature. 
+There were a couple of columns with missing values and we chose to fill them with 'NO' or '0' and safely assume that house doesnt have the unlisted feature.
 
-Because of the nature of the business of home flipping, it is ideal to target 'cookie cutter' houses to easily determine the price of a home when fixed up to its neighbor's condition.
+In order to reduce the impact of outliers in our data, we deleted features that are 3 standard deviations from the mean.
 
-![cookies](./images/cookies.jpg)
-
-In order to reduce the impact of outliers in our data, we deleted features that are 3 standard deviations from the mean. 
-
-Finally, we dropped any duplicate entries. This left us with a final dataset of N = 20,361.
+After dropping the duplicates in the dataset, we were left with a final dataset of N = 20,361 houses.
 
 Our cleaned data is uploaded to a new csv, 'cleaned_data.csv' within our data folder.
 
-With the cleaned dataset, we used Python libraries 'sklearn' to create a train/test split and scale and transform. Then we used linear regression and RFE to select the most impactful features to pass into OLS.
+### Methods
+
+Because of the nature of the business of home flipping, it is ideal to target 'cookie cutter' houses to easily determine the price of a home when fixed up to its neighbor's condition.
+
+The cookie cutter model allows us to easily identify under-appreciated properties in order to quickly fix them up and sale at market price.
+
+![cookies](./images/cookies.jpg)
+
+With the cleaned dataset, we used Python libraries 'sklearn' to create a train/test split and scale and transform. Then we used linear regression and RFE to select the most impactful features to pass into OLS regression.
 
 With Python library 'statsmodels', we created our model summary that output the adjusted rsquared, along with the coefficients of our features.
 
@@ -44,7 +48,7 @@ To validate our model, we tested for the assumptions of linear regression.
 
 ## Results
 Developed model that accounts for 60% of variability in home price using input variables that you as a house flipper would care about.
-'sqft_living', 'view', 'grade', and 'urban / suburb / rural' are the most important features in home price.
+'sqft_living', 'view', 'grade', 'relative_living_area', and 'urban / suburb / rural' are the most important features in home price.
 
 ### Model 1 - Simple Model
 
@@ -132,10 +136,10 @@ For any additional questions, please contact **Evan Johnson | ewjohn127@gmail.co
 
 ## Repository Structure
 
-You are in the README.md. The 'Simple_Model.ipynb' and 'Advanced_Model.ipynb' contains the 'simple' and 'advanced' model jupyter notebooks that explains our data science steps for you to replicate! 
+You are in the README.md. The appendix contains our model building process. Within it, you will find jupyter notebooks that explains our data science steps for you to replicate! 
 
 
-Our 'Presentation.pdf' contains our google slides presentation that sums up important information for our audience. In 'data' you will be able to see the dataset we worked with. Likewise, 'Images' will contain images used in this 'README.md' generated from code and as well as from the web.
+Our 'HomeFlip_KingCounty_Model_Presentation.pdf' contains our google slides presentation that sums up important information for our audience. In 'data' you will be able to see the dataset we worked with. Likewise, 'Images' will contain images used in this 'README.md' generated from code and as well as from the web.
 
 ```
 ├── README.md                              <- The top-level README for reviewers of this project
@@ -143,6 +147,7 @@ Our 'Presentation.pdf' contains our google slides presentation that sums up impo
 ├── data                                   <- Both sourced externally and generated from code
 ├── images                                 <- Holds images used in this README.md  
 ├── HomeFlip_kingCounty_Price_Model.ipynb  <- Narrative documentation of analysis explaining the Models in jupyter notebook
-└── Presentation.pdf                       <- PDF version of project presentation
+├── HomeFlip_KingCounty_Model_Notebook.pdf <- Narrative documentation of analysis explaining the Models in PDF!
+└── HomeFlip_KingCounty_Model_Presentation.pdf <- PDF version of project presentation
 ```
 
