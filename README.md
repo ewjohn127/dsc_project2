@@ -118,6 +118,8 @@ Based on our data, it is clear that the location of the home has a large factor 
 Moving away from Seattle decreases the value of the home, on average.
 The two most important factors in your homes price are livable space, and construction grade.
 
+Although our model does infer the average home price well, there are still many more factors you should consider on top of our model. These factors include, but are not limited to (# of bdrooms, bathrooms, sqft_lot, etc).
+
 ### Limitations
 
 When checking for the assumptions of linearity, we did come across some problems. However, our model does perform better than the base, but the results show that our model can still be improved.
