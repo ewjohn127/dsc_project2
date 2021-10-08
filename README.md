@@ -126,7 +126,7 @@ Our data was limited to years 2014-2015. Preferably, we would want more data to 
 
 ## Future Investigations
 
-In the future, by further binning zipcodes using metrics such as geographical income, poverty, and crime rates, we can expect to have an even more accurate model.
+In the future, by further binning zipcodes using metrics such as geographical income, poverty, and crime rates, we can expect to have an even more accurate model. From there we could also factor in proximity to schools, parks, and other amenities.
 
 ## For More Information
 
@@ -138,16 +138,15 @@ For any additional questions, please contact **Evan Johnson | ewjohn127@gmail.co
 
 You are in the README.md. The appendix contains our model building process. Within it, you will find jupyter notebooks that explains our data science steps for you to replicate! 
 
-
 Our 'HomeFlip_KingCounty_Model_Presentation.pdf' contains our google slides presentation that sums up important information for our audience. In 'data' you will be able to see the dataset we worked with. Likewise, 'Images' will contain images used in this 'README.md' generated from code and as well as from the web.
 
 ```
-├── README.md                              <- The top-level README for reviewers of this project
-├── appendix.ipynb                         <- Narrative documentation of analysis in creating the Models in jupyter notebook
-├── data                                   <- Both sourced externally and generated from code
-├── images                                 <- Holds images used in this README.md  
-├── HomeFlip_kingCounty_Price_Model.ipynb  <- Narrative documentation of analysis explaining the Models in jupyter notebook
-├── HomeFlip_KingCounty_Model_Notebook.pdf <- Narrative documentation of analysis explaining the Models in PDF!
+├── README.md                                  <- The top-level README for reviewers of this project
+├── appendix.ipynb                             <- Narrative documentation of analysis in creating the Models in jupyter notebook
+├── data                                       <- Both sourced externally and generated from code
+├── images                                     <- Holds images used in this README.md  
+├── HomeFlip_kingCounty_Price_Model.ipynb      <- Narrative documentation of analysis explaining the Models in jupyter notebook
+├── HomeFlip_KingCounty_Model_Notebook.pdf     <- Narrative documentation of analysis explaining the Models in PDF!
 └── HomeFlip_KingCounty_Model_Presentation.pdf <- PDF version of project presentation
 ```
 
