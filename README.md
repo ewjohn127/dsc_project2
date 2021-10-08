@@ -126,7 +126,7 @@ In the future, by further binning zipcodes using metrics such as geographical in
 
 ## For More Information
 
-Please review our full analysis in [our Jupyter Notebook](./HomeFlip_KingCounty_Price_Model.ipynb.ipynb) or our [presentation](./Presentation.pdf).
+Please review our full analysis in [our Jupyter Notebook](HomeFlip_KingCounty_Model_Notebook.ipynb) or our [presentation](HomeFlip_KingCounty_Model_Presentation.pdf).
 
 For any additional questions, please contact **Evan Johnson | ewjohn127@gmail.com, Isaac Barrera | ibarr24@gmail.com, Seung Lee | baekho5767@gmail.com**
 
